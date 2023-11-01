@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let arr = [10, 2, 9, 5, 6, 8, 4, 3, 8, 9, 10];
+    let max1 = 0;
+    let max2 = 0;
+    let max3= 0;
+    function score(arr) {
+        for (let i=0;i<arr.length;i++){
+            if (max1 < arr[i]){
+                max1 = arr[i];
+            }
+            if (max2 <arr[i] && arr[i]<max1){
+                max2 = arr[i];
+            }
+            if (max3 < arr[i] && arr[i] <max2){
+                max3 = arr[i]
+            }
+        }
+        return max3
+    }
+
+    let result=score(arr);
+    document.write(result)
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkSubstring(str1, str2) {
+        if (str1.length > str2.length) {
+            return false;
+        }
+
+        for (let i = 0; i <= str2.length - str1.length; i++) {
+            let isMatch = true;
+
+            for (let j = 0; j < str1.length; j++) {
+                if (str1[j] !== str2[i + j]) {
+                    isMatch = false;
+                    break;
+                }
+            }
+
+            if (isMatch) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    let str1 = "abc";
+    let str2 = "xyzabcdef";
+
+    let result = checkSubstring(str1, str2);
+    console.log(result); // Kết quả: true
+
+</script>
+</body>
+</html>
